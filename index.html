@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es" class="bg-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PARPAL · Bienvenida al equipo</title>
+  <meta name="description" content="Genera tarjetas de bienvenida para nuevos integrantes de PARPAL de forma rápida y editable." />
+  <meta name="theme-color" content="#0f2f57" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Barra de herramientas (no se incluye en la descarga) -->
+  <header class="toolbar" id="toolbar">
+    <div class="toolbar__brand">
+      <span class="toolbar__dot"></span>
+      <span>Bienvenida PARPAL</span>
+    </div>
+    <div class="toolbar__actions">
+      <button type="button" class="btn btn--ghost" id="btnReset">Reiniciar</button>
+      <button type="button" class="btn btn--secondary" id="btnPhoto">Subir foto</button>
+      <button type="button" class="btn btn--primary" id="btnDownload">Descargar imagen</button>
+    </div>
+  </header>
+
+  <p class="hint">Haz clic en cualquier texto para editarlo. Toca la tarjeta blanca para subir la foto. Cuando termines, pulsa <strong>Descargar imagen</strong>.</p>
+
+  <main class="stage">
+    <!-- Póster exportable -->
+    <section class="poster" id="poster" aria-label="Tarjeta de bienvenida">
+      <div class="poster__bg" aria-hidden="true"></div>
+
+      <div class="poster__content">
+        <div class="poster__logo" aria-label="Logo de PARPAL" role="img">
+          <svg class="logo-svg" viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M60 4 L108 20 V70 C108 104 86 128 60 140 C34 128 12 104 12 70 V20 Z"
+                  fill="#0f2f57" stroke="#e0a527" stroke-width="5" stroke-linejoin="round" />
+            <path d="M60 12 L100 25 V70 C100 100 80 121 60 132 C40 121 20 100 20 70 V25 Z"
+                  fill="none" stroke="#e0a527" stroke-width="2" opacity="0.6" />
+            <path d="M64 34 C48 44 46 66 60 74 C50 76 44 86 48 98 C56 90 66 90 70 82 C74 72 70 62 62 58 C74 54 76 42 64 34 Z"
+                  fill="#e0a527" />
+            <circle cx="72" cy="40" r="4" fill="#e0a527" />
+          </svg>
+          <span class="logo-word">PARPAL</span>
+        </div>
+
+        <!-- Zona de foto -->
+        <button type="button" class="photo" id="photoZone" aria-label="Subir foto del nuevo integrante">
+          <div class="photo__placeholder" id="photoPlaceholder">
+            <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.8" />
+              <path d="M21 15l-5-5L5 21" />
+            </svg>
+            <span>Clic para subir foto</span>
+          </div>
+        </button>
+
+        <div class="banner">WELCOME TO THE TEAM</div>
+
+        <h1 class="name" id="name" contenteditable="true" spellcheck="false" data-placeholder="TU NOMBRE AQUÍ"></h1>
+        <p class="position" id="position" contenteditable="true" spellcheck="false" data-placeholder="Tu puesto aquí"></p>
+
+        <div class="divider" aria-hidden="true">
+          <span class="divider__dot"></span>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 10L12 5 2 10l10 5 10-5z" />
+                <path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5" />
+              </svg>
+            </div>
+            <h2 class="card__title">DEGREE</h2>
+            <p class="card__text" contenteditable="true" spellcheck="false" data-placeholder="Tu carrera aquí"></p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 18V5l10-2v13" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="16" cy="16" r="3" />
+              </svg>
+            </div>
+            <h2 class="card__title">HOBBIES</h2>
+            <p class="card__text" contenteditable="true" spellcheck="false" data-placeholder="Tus hobbies aquí"></p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="5" r="2.2" />
+                <circle cx="5" cy="17" r="2.2" />
+                <circle cx="19" cy="17" r="2.2" />
+                <path d="M12 7.2v4.3M10.4 13.4L6.6 15.6M13.6 13.4l3.8 2.2" />
+                <circle cx="12" cy="13" r="1.6" />
+              </svg>
+            </div>
+            <h2 class="card__title">STRENGTHS</h2>
+            <p class="card__text" contenteditable="true" spellcheck="false" data-placeholder="Tus atributos aquí"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <input type="file" id="photoInput" accept="image/*" hidden />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
