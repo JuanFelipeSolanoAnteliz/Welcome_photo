@@ -163,12 +163,16 @@ body {
 }
 
 .poster__logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  margin-bottom: 1.5%;
+    /* position: absolute;
+    left: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 1.5%;
 }
+
+
 
 .logo_yellow {
   width: 80%;
@@ -233,42 +237,40 @@ body {
 }
 
 
-
 .name {
-  font-family: "Oswald", sans-serif;
-  font-weight: 500;
-  color: var(--navy);
-  text-transform: uppercase;
-  line-height: 0.98;
-  font-size: clamp(30px, 9.5vw, 50px);
-  letter-spacing: 0.005em;
-  text-align: center;
-  margin-top: 2.5%;
-  width: 100%;
-  outline: none;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    color: var(--navy);
+    text-transform: uppercase;
+    line-height: 0.98;
+    font-size: clamp(30px, 9.5vw, 40px);
+    letter-spacing: 0.05em;
+    text-align: center;
+    margin-top: 2.5%;
+    width: 100%;
+    outline: none;
 }
-
-.position {
-  font-family:  sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: var(--navy);
-  font-size: clamp(15px, 3.8vw, 15px);
-  text-align: center;
-  margin-top: 1%;
-  outline: none;
+.position{
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--navy);
+    font-size: clamp(13px, 3.8vw, 12px);
+    text-align: center;
+    margin-top: 1%;
+    outline: none;
 }
 
 /* ---------- Divider ---------- */
 .divider {
-  width: 88%;
-  height: 2px;
-  background: var(--gold);
-  margin: 4% 0;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 88%;
+    height: 2px;
+    background: var(--gold);
+    margin: 2% 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .divider__dot {
@@ -287,15 +289,16 @@ body {
 }
 
 .card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 14% 6% 12%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 8px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 10% 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0px;
+    margin-bottom: 12%;
 }
 
 .card__icon {
@@ -318,55 +321,90 @@ body {
   letter-spacing: 0.03em;
 }
 
-.contact {
-
-  width: 100%;
-  margin-top: 04%;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5%;
+.contact{
+    /* position:absolute; 
+    left:30px;
+    right:30px;
+    bottom:10px;  */
+    border:1px solid var(--card-border);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    background:var(--card-bg);
+    height:40px;
+    width:100%;
+    /* box-shadow:0 5px 18px rgba(0,0,0,.06); */
 }
 
-.contact__row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 10px;
-  padding: 9px 14px;
+.contact__item{
+    /* background:var(--card-bg); */
+    flex:1;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:10px 16px;
 }
 
-.contact__icon {
-  flex: none;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--navy);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.contact__divider{
+
+    width:1px;
+    align-self:stretch;
+    background:var(--card-border);
 }
 
-.contact__label {
-  flex: none;
-  font-family: "Oswald", sans-serif;
-  font-weight: 600;
-  color: var(--navy);
-  font-size: clamp(11px, 2.4vw, 14px);
-  letter-spacing: 0.02em;
-  min-width: 34%;
+.contact__icon{
+
+    flex:none;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:var(--navy);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.contact__value {
-  flex: 1;
-  color: var(--ink);
-  font-size: clamp(11px, 2.4vw, 14px);
-  font-weight: 500;
-  text-align: right;
-  outline: none;
-  min-height: 1.2em;
+.contact__icon svg{
+
+    width:12px;
+    height:12px;
+}
+
+.contact__info{
+
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+
+    min-width:0;
+}
+
+.contact__label{
+
+    font-family:"Oswald",sans-serif;
+    text-transform:uppercase;
+    font-size:12px;
+    color:var(--navy);
+    font-weight:600;
+}
+
+.contact__value{
+    outline:none;
+    font-size:7px;
+    font-weight:500;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    color:var(--ink);
+    white-space:nowrap;
+}
+
+.contact__value:empty::before{
+
+    content:attr(data-placeholder);
+
+    color:#a8b0bc;
 }
 
 .card__text {
