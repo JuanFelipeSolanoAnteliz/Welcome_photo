@@ -341,6 +341,7 @@ body {
     flex:1;
     display:flex;
     align-items:center;
+    justify-content: center;
     gap:14px;
     padding:10px 16px;
 }
